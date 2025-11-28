@@ -1,7 +1,7 @@
+import "@rainbow-me/rainbowkit/styles.css";
 import "./App.css";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/navbar";
-import { Faucet } from "./pages/faucet";
 import { Earn } from "./pages/earn";
 
 function App() {
@@ -10,9 +10,7 @@ function App() {
       <div className="min-h-screen bg-gray-50">
         <Navbar />
         <Routes>
-          <Route path="/" element={<Navigate to="/faucet" replace />} />
-          <Route path="/earn" element={<Earn />} />
-          <Route path="/faucet" element={<Faucet />} />
+          <Route path="/" element={<Earn />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -8,7 +8,7 @@ interface AmountInputProps {
   label: string;
   placeholder?: string;
   prefix?: string;
-  type?: "deposit" | "withdraw";
+  type?: "deposit" | "withdraw" | "mint";
 }
 
 export function AmountInput({
@@ -43,8 +43,12 @@ export function AmountInput({
           className={cn(
             "h-16 border-2 pl-12 md:text-2xl font-medium focus-visible:ring-2 focus-visible:ring-offset-0",
             {
-              "bg-blue-50 border-blue-600 focus-visible:ring-blue-600": type === "deposit",
-              "bg-purple-50 border-purple-600 focus-visible:ring-purple-600": type === "withdraw",
+              "bg-blue-50 border-blue-600 focus-visible:ring-blue-600":
+                type === "deposit",
+              "bg-purple-50 border-purple-600 focus-visible:ring-purple-600":
+                type === "withdraw",
+              "bg-green-50 border-green-600 focus-visible:ring-green-600":
+                type === "mint",
             }
           )}
           placeholder={placeholder}
